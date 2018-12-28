@@ -7,8 +7,8 @@ DIVE INTO CODEの卒業課題です。
 
 ## コンセプト
 
-&nbsp; &nbsp; &nbsp;読了した書籍の内容をスキマ時間におさらい!
-&nbsp; &nbsp; &nbsp;問題作成で、書籍内容の編集およびアウトプットが可能!
+- 読了した書籍の内容をスキマ時間におさらい!
+- 問題作成で、書籍内容の編集およびアウトプットが可能!
 
 ## 概要
 
@@ -25,7 +25,7 @@ DIVE INTO CODEの卒業課題です。
  - ログインによる機能制限(devise使用)
 
 2.画像
-  - 画像投稿機能(ユーザー、書籍)
+  - 画像投稿機能(ユーザーアイコン、書籍アイコン)
 
 3.書籍
  - 書籍情報の登録機能
@@ -42,11 +42,11 @@ DIVE INTO CODEの卒業課題です。
 
 ## 仕様
 
-# - [カタログ設計](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=0)
-# - [テーブル定義](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1614793316)
-# - [ER図](https://www.draw.io/?state=%7B%22ids%22:%5B%221RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u%22%5D,%22action%22:%22open%22,%22userId%22:%22104939258500660753782%22%7D#G1RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u)
-# - [画面遷移図](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=629326844)
-# - [ワイヤーフレーム](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1669746727)
+- [カタログ設計](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=0)
+- [テーブル定義](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1614793316)
+- [ER図](https://www.draw.io/?state=%7B%22ids%22:%5B%221RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u%22%5D,%22action%22:%22open%22,%22userId%22:%22104939258500660753782%22%7D#G1RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u)
+- [画面遷移図](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=629326844)
+- [ワイヤーフレーム](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1669746727)
 
 ## 使用予定gem
 
