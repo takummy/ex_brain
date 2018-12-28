@@ -44,7 +44,7 @@ DIVE INTO CODEの卒業課題です。
 
 - [カタログ設計](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=0)
 - [テーブル定義](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1614793316)
-- [ER図](https://www.draw.io/?state=%7B%22ids%22:%5B%221RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u%22%5D,%22action%22:%22open%22,%22userId%22:%22104939258500660753782%22%7D#G1RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u)
+- [ER図](https://drive.google.com/file/d/1RRlYxL8iPtvyMmHT9rFFHaNVyYrRjT1u/view)
 - [画面遷移図](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=629326844)
 - [ワイヤーフレーム](https://docs.google.com/spreadsheets/d/11_zs59nDlXGr9un59Kv_nKRELJglrdHiLZXPHKaABAM/edit#gid=1669746727)
 
