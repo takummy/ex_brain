@@ -1,0 +1,27 @@
+<header>
+  <nav class="navbar">
+    <div class="container container-small">
+      <div class="nav-header">
+        <%= link_to "Ex Brain" , root_path, class: 'navbar-brand' %>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'マイページ', user_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      <ul>
+    </div>
+  </nav>
+</header>

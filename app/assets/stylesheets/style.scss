@@ -1,0 +1,37 @@
+// Header
+header {
+  background-color: #06abf994;
+  text-decoration: none;
+  margin-bottom: 50px; 
+
+  a {
+     color: white;
+     font-weight: bold;
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+  }
+
+  .nav-item {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 850px;
+  }
+}
+
+// Home
+.info {
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    padding: 0 100px 100px 100px; 
+  }
+}
