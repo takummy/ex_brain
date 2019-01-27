@@ -15,15 +15,34 @@ body {
   }
 }
 
+.alert {
+  text-align: center;
+}
+
+#error_explanation {
+  text-align: center;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 // ヘッダー
 header {
   background-color: #06abf994;
   text-decoration: none;
-  margin-bottom: 50px;
 
   a {
      color: white;
      font-weight: bold;
+  }
+
+  .navbar {
+    margin-bottom: 0px;
   }
 
   .navbar-brand {
