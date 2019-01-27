@@ -15,4 +15,5 @@
 
 /config/master.key
 /vendor/bundle
+public/uploads
 .env
