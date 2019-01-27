@@ -17,7 +17,7 @@ gem 'mini_magick'
 gem 'dotenv-rails'
 
 #フロントエンド系
-gem 'bootstrap'
+# gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
 gem "font-awesome-rails"
 gem 'jbuilder', '~> 2.5'
