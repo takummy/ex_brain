@@ -18,6 +18,10 @@ body {
 // フラッシュメッセージ、エラーメッセージ
 .alert {
   text-align: center;
+
+  h2, li {
+    text-align: left;
+  }
 }
 
 #error_explanation {
@@ -100,4 +104,8 @@ footer {
 // Book/New
 #book-submit {
   margin-top: 20px;
+}
+
+.container-small {
+  margin-top: 60px;
 }
