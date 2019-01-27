@@ -1,8 +1,25 @@
-// Header
+// 全体
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #e9ebee36;
+
+  .container {
+    width: 850px;
+    min-height: 100%;
+    position: relative;
+  }
+}
+
+// ヘッダー
 header {
   background-color: #06abf994;
   text-decoration: none;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 
   a {
      color: white;
@@ -25,13 +42,29 @@ header {
   }
 }
 
-// Home
+// フッター
+footer {
+  height: 60px;
+  width: 100%;
+  background-color: #e5e9ec;
+  position: absolute;
+  display: table;
+
+  p {
+    color: #737373;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
+// ホーム画面
 .info {
   h1 {
     text-align: center;
   }
 
   p {
-    padding: 0 100px 100px 100px; 
+    padding: 0 100px 100px 100px;
   }
 }
