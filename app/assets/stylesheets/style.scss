@@ -15,6 +15,7 @@ body {
   }
 }
 
+// フラッシュメッセージ、エラーメッセージ
 .alert {
   text-align: center;
 }
@@ -29,6 +30,14 @@ body {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+
+  h3 {
+    text-align: center;
+  }
+
+  li {
+    text-align: left;
+  }
 }
 
 // ヘッダー

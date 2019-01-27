@@ -19,6 +19,8 @@ gem 'dotenv-rails'
 #フロントエンド系
 # gem 'bootstrap'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem "font-awesome-rails"
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -32,8 +34,6 @@ gem 'bootsnap', '>= 1.1.0'
 
 #認証系
 gem 'devise'
-gem 'devise-i18n'
-gem 'devise-i18n-views'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
