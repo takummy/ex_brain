@@ -1,4 +1,4 @@
-// 全体
+// All
 html {
   font-size: 62.5%;
   height: 100%;
@@ -40,7 +40,7 @@ body {
   }
 }
 
-// ヘッダー
+// Header
 header {
   background-color: #06abf994;
   text-decoration: none;
@@ -70,7 +70,7 @@ header {
   }
 }
 
-// フッター
+// Footer
 footer {
   height: 60px;
   width: 100%;
@@ -86,7 +86,7 @@ footer {
   }
 }
 
-// ホーム画面
+// Home
 .info {
   h1 {
     text-align: center;
@@ -95,4 +95,9 @@ footer {
   p {
     padding: 0 100px 100px 100px;
   }
+}
+
+// Book/New
+#book-submit {
+  margin-top: 20px;
 }
