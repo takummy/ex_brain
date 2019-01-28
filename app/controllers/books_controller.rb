@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def new
     @book = Book.new
@@ -15,13 +16,32 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-    @book = Book.find[:params]
+  def show;end
+
+  def edit
+    if @book.update
+      flash[:success] = '編集しました'
+      redirect_to @book
+    else
+      render :edit
+    end
+  end
+
+  def update
+
+  end
+
+  def destroy
+
   end
 
 
-
   private
+
+  def set_book
+    @book = Book.find(params[:id])
+  end
+
   def book_params
     params.require(:book).permit(:title, :description, :image)
   end
