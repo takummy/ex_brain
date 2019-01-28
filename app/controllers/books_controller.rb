@@ -18,8 +18,10 @@ class BooksController < ApplicationController
 
   def show;end
 
-  def edit
-    if @book.update
+  def edit;end
+
+  def update
+    if @book.update(book_params)
       flash[:success] = '編集しました'
       redirect_to @book
     else
@@ -27,14 +29,11 @@ class BooksController < ApplicationController
     end
   end
 
-  def update
-
-  end
-
   def destroy
-
+    @book.destroy
+    flash[:info] = "#{@book.title}を削除しました"
+    redirect_to user_path(@book.user)
   end
-
 
   private
 

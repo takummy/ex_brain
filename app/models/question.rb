@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   belongs_to :book
 
   has_many :answers, dependent: :destroy
-  has_many :lesson_questions, dependent: :destroys
+  has_many :lesson_questions, dependent: :destroy
 
   accepts_nested_attributes_for :answers
 

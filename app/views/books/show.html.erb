@@ -4,11 +4,15 @@
       <div class="panel-body">
         <div class="text-center">
           <% if @book.image.url %>
-            <%= image_tag @book.image.url(:thumb),  id: "book_img" %>
+            <%= image_tag @book.image.url(:thumb),  class: "book_img" %>
           <% else %>
-            <%= image_tag 'default_book_image.png', id: "book_img" %>
+            <%= image_tag 'default_book_image.png', class: "book_img" %>
           <% end %>
-          <h3><%= @book.title %></h3>
+
+          <h3>
+            <%= @book.title %>
+          </h3>
+
           <%= link_to "編集", edit_book_path(@book), class: "small" %>
 
           <hr id="book_hr">

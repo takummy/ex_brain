@@ -8,6 +8,13 @@
 
     <div class="col-sm-8">
       <img id="book_img_prev" src="#" class='hidden' />
+      <% if action_name == 'edit' %>
+        <% if @book.image.present? %>
+          <%= image_tag @book.image.url(:thumb), class: "present_book_img book_img" %>
+        <% else %>
+          <%= image_tag "default_book_image.png", class: "present_book_img book_img" %>
+        <% end %>
+      <% end %>
       <%= f.file_field :image, id: "post_img" %>
     </div>
   </div>

@@ -12,6 +12,7 @@ $( document ).on('turbolinks:load', function() {
  
   $("#post_img").change(function(){
     $('#book_img_prev').removeClass('hidden');
+    $('.present_book_img').remove();
     readURL(this);
   });
 });
