@@ -9,7 +9,7 @@
     <% @books.each do |book| %>
       <p><%= book.title %></p>
       <p><%= book.description %></p>
-      <p><%= image_tag book.image.url(:thumb) %></p>
+      <p><%= image_tag book.image.url(:thumb) if book.image.present? %></p>
       <%= link_to '詳細', book_path(book) %>
     <% end %>
   <% end %>
