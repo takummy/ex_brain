@@ -13,18 +13,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # def default_url(*args)
-  #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-  #
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
+  def default_url(*args)
+    "default_book_image.png"
+  end
 
-  # process scale: [200, 300]
-
-  # def scale(width, height)
-  #   # do something
-  # end
+  process resize_to_fit: [150, 200]
   
   version :thumb do
     process resize_to_fit: [150, 200]

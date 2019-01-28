@@ -13,11 +13,11 @@ class IconUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # def default_url(*args)
-  #   "default_user_icon.png"
-  # end
+  def default_url(*args)
+    "default_user_icon.png"
+  end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [150, 200]
   
   version :thumb do
     process resize_to_fit: [150, 200]
