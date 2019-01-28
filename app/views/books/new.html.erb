@@ -21,7 +21,8 @@
               </div>
 
               <div class="col-sm-8">
-                <%= f.file_field :image %>
+                <img id="book_img_prev" src="#" class='hidden' />
+                <%= f.file_field :image, id: "post_img" %>
               </div>
             </div>
 
@@ -44,7 +45,7 @@
                 <%= f.text_area :description, class:'form-control'%>
               </div>
 
-              <div id="book-submit" class="col-sm-2">
+              <div id="book_submit" class="col-sm-2">
                 <%= f.submit "登録", class: 'btn btn-success form-control'%>
               </div>
             </div>
