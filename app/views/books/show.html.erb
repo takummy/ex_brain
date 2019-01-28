@@ -1,0 +1,25 @@
+<div class="container container-small">
+  <div class="col-sm-3">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="text-center">
+          <% if @book.image.url %>
+            <%= image_tag @book.image.url(:thumb),  class: "book_img" %>
+          <% else %>
+            <%= image_tag 'default_book_image.png', class: "book_img" %>
+          <% end %>
+
+          <h3>
+            <%= @book.title %>
+          </h3>
+
+          <%= link_to "編集", edit_book_path(@book), class: "small" %>
+
+          <hr id="book_hr">
+
+          <h4 class="text-left"><%= @book.description %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-// 全体
+// All
 html {
   font-size: 62.5%;
   height: 100%;
@@ -18,6 +18,10 @@ body {
 // フラッシュメッセージ、エラーメッセージ
 .alert {
   text-align: center;
+
+  h2, li {
+    text-align: left;
+  }
 }
 
 #error_explanation {
@@ -40,7 +44,7 @@ body {
   }
 }
 
-// ヘッダー
+// Header
 header {
   background-color: #06abf994;
   text-decoration: none;
@@ -70,7 +74,7 @@ header {
   }
 }
 
-// フッター
+// Footer
 footer {
   height: 60px;
   width: 100%;
@@ -86,7 +90,7 @@ footer {
   }
 }
 
-// ホーム画面
+// Home
 .info {
   h1 {
     text-align: center;
@@ -95,4 +99,30 @@ footer {
   p {
     padding: 0 100px 100px 100px;
   }
+}
+
+// Book Image
+.book_img {
+  width: 143px;
+  height: 200px;
+}
+
+// Book/New
+#book_img_prev {
+  width: 100px;
+  height: 150px;
+}
+
+#book_submit {
+  margin-top: 20px;
+}
+
+.container-small {
+  margin-top: 60px;
+}
+
+// Book/Show
+hr#book_hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
