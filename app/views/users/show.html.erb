@@ -1,21 +1,35 @@
 <div class="container container-small">
-  <h2><%= @user.email %></h2>
-  <% if current_user?(@user) %>
-    <div>
-      <%= link_to '編集', edit_user_registration_path %>
+  <div class="col-sm-2">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="text-center">
+          <%= render 'user_info' %>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <% if @books %>
-    <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <p><%= book.description %></p>
-      <% if book.image.present? %>
-        <p><%= image_tag book.image.url(:thumb), class: "book_img" %></p>
-      <% else %>
-        <p><%= image_tag "default_book_image.png", class: "book_img" %></p>
-      <% end %>
-      <%= link_to '詳細', book_path(book) %>
-      <%= link_to '削除', book_path(book), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-    <% end %>
-  <% end %>
+  </div>
+
+  <div class="col-sm-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="heading">Questions</span>
+      </div>
+
+      <div class="panel-body">
+        <% @books.each do |book| %>
+          <div class="media">
+            <div class="media-left media-middle">
+              <%= image_tag book.image.url(:thumb),  class: "book_img" %>
+            </div>
+
+            <div class="media-body media-middle">
+              <div>
+                <%= book.title %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

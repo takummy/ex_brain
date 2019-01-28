@@ -1,0 +1,14 @@
+<%= image_tag @user.icon.url(:thumb),
+              class: "user_img" if @user.icon.url.present? %>
+<h3 id="user_profile_name">
+  <%= link_to "#{@user.name}", edit_user_registration_path %>
+</h3>
+
+<hr class="info_hr">
+
+<div id="user_profile_email" class="text-gray mb-15"">
+  <%= current_user.email %>
+</div>
+
+<%= link_to "編集する", edit_user_registration_path,
+                       class: "btn btn-xs btn-warning" %>

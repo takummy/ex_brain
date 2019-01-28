@@ -9,10 +9,14 @@ body {
   background-color: #e9ebee36;
 
   .container {
-    width: 850px;
+    width: 100%;
     min-height: 100%;
     position: relative;
   }
+}
+
+.panel {
+  border: 1px solid #d2cdcd;
 }
 
 // フラッシュメッセージ、エラーメッセージ
@@ -60,6 +64,7 @@ header {
 
   .navbar-brand {
     font-size: 30px;
+    padding-left: 45px;
   }
 
   .nav-item {
@@ -68,9 +73,13 @@ header {
     }
   }
 
+  .navbar-right {
+    margin-right: 50px;
+  }
+
   .container {
     margin: 0 auto;
-    width: 850px;
+    width: 100%;
   }
 }
 
@@ -102,7 +111,7 @@ footer {
 }
 
 // Book Image
-.book_img {
+.book_img, .user_img {
   width: 143px;
   height: 200px;
 }
@@ -122,7 +131,25 @@ footer {
 }
 
 // Book/Show
-hr#book_hr {
+hr.info_hr {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+// User/Show
+.user_img {
+  width:  120px;
+  height: 120px;
+  border-radius: 50%;
+  background-position: left top;
+  border: 1px solid #b9b1b1;
+}
+
+#user_profile_name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#user_profile_email {
+  margin-bottom: 8px;
 }
