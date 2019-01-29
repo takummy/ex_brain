@@ -118,12 +118,16 @@ footer {
 
 // Book/Form
 #book_img_prev {
-  width: 100px;
-  height: 150px;
+  width: 143px;
+  height: 200px;
+}
+
+textarea#book_description {
+  height: 80px;
 }
 
 #book_buttons {
-  margin-top: 20px;
+  margin-top: 45px;
 
   .btn {
     width: 55px;
