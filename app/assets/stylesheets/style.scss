@@ -116,14 +116,18 @@ footer {
   height: 200px;
 }
 
-// Book/New
+// Book/Form
 #book_img_prev {
   width: 100px;
   height: 150px;
 }
 
-#book_submit {
+#book_buttons {
   margin-top: 20px;
+
+  .btn {
+    width: 55px;
+  }
 }
 
 .container-small {

@@ -38,8 +38,13 @@
       <%= f.text_area :description, class:'form-control'%>
     </div>
 
-    <div id="book_submit" class="col-sm-2">
-      <%= f.submit "登録", class: 'btn btn-success form-control'%>
+    <div id="book_buttons" class="col-sm-2 row">
+      <%= f.submit "登録", class: 'btn btn-success col-sm-6'%>
+      <% if action_name == 'edit' %>
+        <%= link_to "削除", book_path(f.object.id), method: :delete,
+                                            data: { confirm: "本当に#{f.object.title}を削除しますか？" },
+                                            class: "btn btn-danger col-sm-5 col-sm-offset-1" %>
+      <% end %>
     </div>
   </div>
 <% end %>
