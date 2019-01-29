@@ -138,7 +138,7 @@ hr.info_hr {
 
 // User/Show
 .user_img {
-  width:  120px;
+  width:  100px;
   height: 120px;
   border-radius: 50%;
   background-position: left top;
@@ -154,25 +154,57 @@ hr.info_hr {
   margin-bottom: 8px;
 }
 
-.box {
-  padding: 0px 0px;
+#user_books {
+  padding: 15 60px;
 }
 
-.box-part {
-  background: #FFF;
+#book_pagination {
+  padding-left: 10px;
+}
+
+#book_box {
+  margin-bottom: 15px;
+  padding: 0 40px;
+}
+
+#box_inner {
+  background-color: gray;
   border-radius: 10px;
-  padding: 10px 10px;
-  margin: 30px 0px;
+
+  .book_img {
+    padding-top: 10px;
+  }
 }
 
 #my_page_book_title {
-  margin: 5px 0;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 0 40px;
+  max-height: 30px;
+  min-height: 30px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+#book_info_hr {
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  border-color: #dbdede;
 }
 
 #my_page_book_description {
-  margin: 3px 0px;
+  padding: 0 40px;
+  min-height: 40px;
+  max-height: 40px;
+  line-height: 15px;
+  white-space:normal;
+  overflow-y: auto;
+  font-size: 12px;
+  word-wrap: break-word;
 }
 
-.fa {
-  color: #4183D7;
+#start_button {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

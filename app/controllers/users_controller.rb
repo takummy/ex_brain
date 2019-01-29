@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @books = current_user.books
+    @books = current_user.books.page(params[:page])
+                               .order_by_created_at
   end
 end

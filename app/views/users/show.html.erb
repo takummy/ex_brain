@@ -9,31 +9,37 @@
     </div>
   </div>
 
-  <div class="col-sm-10">
+  <div class="col-sm-10 row" >
     <div class="panel panel-default">
       <div class="panel-heading">
         <span class="heading">Questions</span>
       </div>
 
-      <div class="panel-body row">
-        <div class="col-sm-3">
-          <div class="box-part text-center">
+      <div id="user_books" class="panel-body col-center row">
+        <% @books.each do |book| %>
+          <div id="book_box" class="col-sm-3 row">
+            <div id="box_inner" class="text-center col-center row">
+                <%= link_to book_path(book) do %>
+                  <%= image_tag book.image.url(:thumb),  class: "book_img col-center" %>
+                <% end %>
+                <div id="my_page_book_title" class="col-center">     
+                  <%= book.title %>
+                </div>
 
-            <% @books.each do |book| %>
-              <%= link_to book_path(book) do %>
-                <%= image_tag book.image.url(:thumb),  class: "book_img" %>
-              <% end %>
-              <div class="title">
-                <h4 id="my_page_book_title"><%= book.title %></h4>
-              </div>
-              <div id="my_page_book_description">
-                <small><%= book.description %></small>
-              </div>
-            <% end %>
+                <hr id="book_info_hr" class="col-center">
 
-            <%= link_to "Start", "#", class: "btn-xs btn-success" %>
+                <div id="my_page_book_description" class="col-center">
+                  <%= book.description %>
+                </div>
+                <div id="start_button" class="col-center">
+                  <%= link_to "Start", "#", class: "btn-xs btn-success" %>
+                </div>
+            </div>
           </div>
-        </div>
+        <% end %>
+      </div>
+      <div id="book_pagination">
+        <%= paginate @books %>
       </div>
     </div>
   </div>
