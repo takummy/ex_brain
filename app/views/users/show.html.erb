@@ -1,21 +1,46 @@
 <div class="container container-small">
-  <h2><%= @user.email %></h2>
-  <% if current_user?(@user) %>
-    <div>
-      <%= link_to '編集', edit_user_registration_path %>
+  <div class="col-sm-2">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="text-center">
+          <%= render 'user_info' %>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <% if @books %>
-    <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <p><%= book.description %></p>
-      <% if book.image.present? %>
-        <p><%= image_tag book.image.url(:thumb), class: "book_img" %></p>
-      <% else %>
-        <p><%= image_tag "default_book_image.png", class: "book_img" %></p>
-      <% end %>
-      <%= link_to '詳細', book_path(book) %>
-      <%= link_to '削除', book_path(book), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-    <% end %>
-  <% end %>
+  </div>
+
+  <div class="col-sm-10 row" >
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="heading">Questions</span>
+      </div>
+
+      <div id="user_books" class="panel-body col-center row">
+        <% @books.each do |book| %>
+          <div id="book_box" class="col-sm-3 row">
+            <div id="box_inner" class="text-center col-center row">
+                <%= link_to book_path(book) do %>
+                  <%= image_tag book.image.url(:thumb),  class: "book_img col-center" %>
+                <% end %>
+                <div id="my_page_book_title" class="col-center">     
+                  <%= book.title %>
+                </div>
+
+                <hr id="book_info_hr" class="col-center">
+
+                <div id="my_page_book_description" class="col-center">
+                  <%= book.description %>
+                </div>
+                <div id="start_button" class="col-center">
+                  <%= link_to "Start", "#", class: "btn-xs btn-success" %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div id="book_pagination">
+        <%= paginate @books %>
+      </div>
+    </div>
+  </div>
 </div>

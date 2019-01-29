@@ -1,4 +1,4 @@
-class ImageUploader < CarrierWave::Uploader::Base
+class IconUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    "default_book_image.png"
+    "default_user_icon.png"
   end
 
   process resize_to_fit: [150, 200]
