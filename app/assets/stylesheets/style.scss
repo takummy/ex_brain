@@ -110,6 +110,12 @@ footer {
   }
 }
 
+// Forms
+#form_container {
+  width: 850px;
+  margin: 0 auto;
+}
+
 // Book Image
 .book_img, .user_img {
   width: 143px;
@@ -142,6 +148,15 @@ textarea#book_description {
 hr.info_hr {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+// User/Edit(devise)
+#edit_title {
+  padding-left: 100px;
+}
+
+#back_button {
+  margin-top: 5px;
 }
 
 // User/Show
