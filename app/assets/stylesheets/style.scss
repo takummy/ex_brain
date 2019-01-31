@@ -116,6 +116,17 @@ footer {
   margin: 0 auto;
 }
 
+#form {
+  .col-sm-5 {
+    background-color: #e2e0e0;
+  }
+
+  .col-center{
+    float: none;
+    margin: 0 auto;
+  }
+}
+
 // Book Image
 .book_img, .user_img {
   width: 143px;
