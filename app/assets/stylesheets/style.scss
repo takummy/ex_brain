@@ -19,7 +19,7 @@ body {
   border: 1px solid #d2cdcd;
 }
 
-// フラッシュメッセージ、エラーメッセージ
+// Flash Message, Error Message
 .alert {
   text-align: center;
 
@@ -159,6 +159,16 @@ textarea#book_description {
 hr.info_hr {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+// User/New(devise)
+.btn_social {
+  width: 100%;
+  color: white;
+}
+
+.btn_fb {
+  background-color: #3B5998;
 }
 
 // User/Edit(devise)

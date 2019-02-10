@@ -45,7 +45,11 @@
       <% end %>
 
       <div class="text-center row">
-        <%= link_to "Facebook", user_facebook_omniauth_authorize_path %>
+        <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn_social btn_fb" do %>
+          <div class="col-sm-12">
+            <i class="fa fa_facebook"></i> Facebookでログイン
+          </div>
+        <% end %>
         <%= link_to "Google", user_google_oauth2_omniauth_authorize_path %>
       </div>
     </div>
