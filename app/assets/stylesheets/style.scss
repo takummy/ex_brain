@@ -162,6 +162,10 @@ hr.info_hr {
 }
 
 // User/New(devise)
+.social_buttons .col-sm-12 {
+  margin-top: 5px;
+}
+
 .btn_social {
   width: 100%;
   color: white;
@@ -169,6 +173,10 @@ hr.info_hr {
 
 .btn_fb {
   background-color: #3B5998;
+}
+
+.btn_google {
+  background-color: #dd4b39;
 }
 
 // User/Edit(devise)
