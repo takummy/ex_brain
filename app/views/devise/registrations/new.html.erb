@@ -44,16 +44,20 @@
         </div>
       <% end %>
 
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
+
       <div class="text-center row social_buttons">
         <div class="col-sm-12">
           <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn_social btn_fb" do %>
-              <i class="fa fa-facebook"></i> Facebookでログイン
+              <i class="fa fa-facebook"></i> Facebookアカウントで新規登録
           <% end %>
         </div>
 
         <div class="col-sm-12">
           <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn_social btn_google" do %>
-            <i class="fa fa-google-plus"></i> Googleでログイン
+            <i class="fa fa-google-plus"></i> Googleアカウントで新規登録
           <% end %>
         </div>
 
