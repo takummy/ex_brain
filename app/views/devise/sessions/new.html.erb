@@ -1,5 +1,5 @@
 <div id="form_container">
-  <h1 class="text-center">Log in</h1>
+  <h1 class="text-center"><%= t('user.login') %></h1>
   <div id="form" class="row">
     <div class="col-sm-5 col-center">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,7 +23,7 @@
         <% end -%>
 
         <div class="form-group row">
-          <%= f.submit "Log in", class: "btn btn-primary col-sm-2 col-sm-offset-5" %>
+          <%= f.submit "#{t('session.login')}", class: "btn btn-primary col-center" %>
           <div class="col-sm-5">
           </div>
         </div>
@@ -36,13 +36,13 @@
       <div class="text-center row social_buttons">
         <div class="col-sm-12">
           <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn_social btn_fb" do %>
-              <i class="fa fa-facebook"></i> Facebookアカウントでログイン
+              <i class="fa fa-facebook"></i> <%= t('session.facebook') %>
           <% end %>
         </div>
 
         <div class="col-sm-12">
           <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn_social btn_google" do %>
-            <i class="fa fa-google-plus"></i> Googleアカウントでログイン
+            <i class="fa fa-google-plus"></i> <%= t('session.google') %>
           <% end %>
         </div>
       </div>

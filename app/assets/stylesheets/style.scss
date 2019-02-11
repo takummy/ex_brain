@@ -162,8 +162,12 @@ hr.info_hr {
 }
 
 // User/New(devise)
-.social_buttons .col-sm-12 {
-  margin-top: 5px;
+.social_buttons {
+  margin-bottom: 5px;
+
+  .col-sm-12 {
+    margin-top: 5px;
+  }
 }
 
 .btn_social {
@@ -184,8 +188,12 @@ hr.info_hr {
   padding-left: 100px;
 }
 
-#back_button {
+#cancel_button {
   margin-top: 5px;
+}
+
+#user_update_button {
+  margin-bottom: 4px;
 }
 
 // User/Show

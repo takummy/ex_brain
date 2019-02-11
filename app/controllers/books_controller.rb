@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     if @book.save
-      flash[:success] = '本を追加しました'
+      flash[:success] = "#{t('book.added')}"
       redirect_to user_path(current_user.id)
     else
       render :new
@@ -22,7 +22,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      flash[:success] = '編集しました'
+      flash[:success] = "#{t('book.edited')}"
       redirect_to @book
     else
       render :edit
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    flash[:info] = "#{@book.title}を削除しました"
+    flash[:info] = "#{@book.title}#{t('book.deleted')}"
     redirect_to user_path(@book.user)
   end
 

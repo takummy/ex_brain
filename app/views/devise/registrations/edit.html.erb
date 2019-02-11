@@ -1,5 +1,5 @@
 <div id="form_container">
-  <h1 class="text-center">Edit<%= resource_name.to_s.humanize %></h1>
+  <h1 class="text-center"><%= t('user.edit') %></h1>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3 form-group">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -25,11 +25,11 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.label :password %> <small>(<%= t('user.new_password') %>)</small><br />
           <%= f.password_field :password,
                                 autocomplete: "new-password", class: "form-control" %>
           <% if @minimum_password_length %>
-            <em><%= @minimum_password_length %> characters minimum</em>
+            <em>＊<%= @minimum_password_length %> <%= t('user.password_limit') %></em>
           <% end %>
         </div>
 
@@ -40,28 +40,24 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+          <%= f.label :current_password %> <small>(<%= t('user.current_password') %>)</small>
           <%= f.password_field :current_password,
                                autocomplete: "current-password", class: "form-control" %>
         </div>
-        <div id="user_update_button" class="form-group row">
-          <%= f.submit "Update", class: 'btn btn-success col-sm-2 col-sm-offset-5' %>
-          <div class="col-sm-5">
-          </div>
+        <div id="user_update_button">
+          <%= f.submit "#{t('buttons.update')}", class: 'btn btn-success form-control' %>
         </div>
       <% end %>
-      <div class="text-center">
-        <h3>Cancel my account</h3>
-        <p>Unhappy?</p>
-        <div id="cancel_button">
-          <%= button_to "Cancel my account", registration_path(resource_name),
-                                             data: { confirm: "Are you sure?" },
-                                             method: :delete, class: "btn btn-danger" %>
-        </div>
-        <div id="back_button">
-          <%= link_to "Back", :back, class: "btn btn-default"  %>
-        </div>
+      <div id="back_button" class="form-group">
+        <%= link_to "#{t('buttons.back')}", :back, class: "btn btn-default form-control"  %>
       </div>
+      <br>
+      <br>
+      <br>
+      <%= button_to "#{t('user.cancel_account')}", registration_path(resource_name),
+                                                   data: { confirm: "Are you sure?" },
+                                                   method: :delete, id: "cancel_button",
+                                                   class: "btn btn-danger form-control" %>
     </div>
     <div class="col-sm-3"></div>
   </div>

@@ -12,5 +12,5 @@
   <%= current_user.email %>
 </div>
 
-<%= link_to "編集する", edit_user_registration_path,
+<%= link_to "#{t('buttons.edit')}", edit_user_registration_path,
                        class: "btn btn-xs btn-warning col-sm-4 col-sm-offset-4" %>

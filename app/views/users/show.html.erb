@@ -12,7 +12,7 @@
   <div class="col-sm-10 row" >
     <div class="panel panel-default">
       <div class="panel-heading">
-        <span class="heading">Questions</span>
+        <span class="heading"><%= t('book.index') %></span>
       </div>
 
       <div id="user_books" class="panel-body col-center row">
@@ -32,7 +32,7 @@
                   <%= book.description %>
                 </div>
                 <div id="start_button" class="col-center">
-                  <%= link_to "Start", "#", class: "btn-xs btn-success" %>
+                  <%= link_to "#{t('question.start')}", "#", class: "btn-xs btn-success" %>
                 </div>
             </div>
           </div>
