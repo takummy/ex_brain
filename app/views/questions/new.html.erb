@@ -1,0 +1,54 @@
+<div id="form_container">
+  <div class="container container-small">
+    <div class="panel panel-default">
+      <div class= "panel-heading">
+        <div class="row">
+          <div class="col-sm-6">
+            <span><strong>問題を作成</strong></span>
+          </div>
+
+          <div class="col-sm-6 text-right">
+            <%= link_to "戻る", @book %>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-8 col-sm-offset-2">
+            <%= form_with(model: [@book, @question], local: true) do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <div class="form-group row">
+                  <div class="col-sm-2">
+                    <%= f.label :content, "問題" %>
+                  </div>
+
+                  <div class="col-sm-10">
+                    <%= f.text_area :content, class:'form-control' %>
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                <%= f.fields_for :answers do |field| %>
+                  <div class="col-sm-2">
+                    <%= field.label :content, "選択肢" %>
+                  </div>
+
+                  <div class="col-sm-10">
+                    <%= field.text_area :content, class:'form-control' %>
+                    <%= field.check_box :correct %>
+                    <%= field.label :correct, "正解" %>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="form-group">
+                <%= f.submit class: 'btn btn-success form-control'%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

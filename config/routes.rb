@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: :show
-  resources :books
+  resources :books do
+    resources :questions
+  end
 end
