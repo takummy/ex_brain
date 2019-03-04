@@ -1,23 +1,30 @@
 <div class="container container-small">
-  <div class="col-sm-3">
+  <div class="col-sm-2">
     <div class="panel">
       <div class="panel-body">
-        <div class="text-center">
-          <% if @book.image.url %>
-            <%= image_tag @book.image.url(:thumb),  class: "book_img" %>
-          <% else %>
-            <%= image_tag 'default_book_image.png', class: "book_img" %>
-          <% end %>
+        <div class="row">
+          <%= render 'book_info' %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <h3>
-            <%= @book.title %>
-          </h3>
+  <div class="col-sm-10 row" >
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-sm-6">
+            <span class="heading">問題一覧</span>
+          </div>
+          <div class="col-sm-6 text-right">
+            <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+          </div>
+        </div>
+      </div>
 
-          <%= link_to "#{t('buttons.edit')}", edit_book_path(@book), class: "small" %>
+      <div id="" class="panel-body col-center">
+        <div class="row">
 
-          <hr class="info_hr">
-
-          <h4 class="text-left"><%= @book.description %></h4>
         </div>
       </div>
     </div>
