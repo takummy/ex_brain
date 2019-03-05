@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: :show
-  resources :books do
+  resources :books, shallow: true do
     resources :questions
   end
 end

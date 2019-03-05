@@ -35,7 +35,7 @@
               <td><%= question.content %></td>
               <td><%= question.correct_answer %></td>
               <td>
-                <%= link_to "編集", "#", class: "btn btn-xs btn-warning" %>
+                <%= link_to "編集", edit_question_path(question), class: "btn btn-xs btn-warning" %>
                 <%= link_to "削除", "#", class: "btn btn-xs btn-danger"%>
               </td>
             </tr>
