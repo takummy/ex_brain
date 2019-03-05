@@ -9,6 +9,10 @@ class Question < ApplicationRecord
   validates :content, presence: true, length: { maximum: 200 }
   validate :has_one_correct_answer
 
+  def correct_answer
+    answers.each { |answer| return answer.content if answer.correct? }
+  end
+
   private
 
   def has_one_correct_answer

@@ -18,14 +18,30 @@
           </div>
           <div class="col-sm-6 text-right">
             <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+            <%= link_to "戻る", current_user, class: "btn"%>
           </div>
         </div>
       </div>
 
-      <div id="" class="panel-body col-center">
-        <div class="row">
-        </div>
-      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>問題</th>
+            <th>解答</th>
+          </tr>
+
+          <% @book.questions.each do |question| %>
+            <tr>
+              <td><%= question.content %></td>
+              <td><%= question.correct_answer %></td>
+              <td>
+                <%= link_to "編集", "#", class: "btn btn-xs btn-warning" %>
+                <%= link_to "削除", "#", class: "btn btn-xs btn-danger"%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
