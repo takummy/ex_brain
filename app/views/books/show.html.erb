@@ -11,39 +11,52 @@
 
   <div class="col-sm-10 row" >
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-sm-6">
-            <span class="heading">問題一覧</span>
-          </div>
-          <div class="col-sm-6 text-right">
-            <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
-            <%= link_to "戻る", current_user, class: "btn"%>
+      <% if @book.questions.empty? %>
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-6">
+              <span class="heading">まだ問題が作成されていません</span>
+            </div>
+            <div class="col-sm-6 text-right">
+              <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+              <%= link_to "戻る", current_user, class: "btn"%>
+            </div>
           </div>
         </div>
-      </div>
+      <% else %>
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-6">
+              問題一覧
+            </div>
+            <div class="col-sm-6 text-right">
+              <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+              <%= link_to "戻る", current_user, class: "btn"%>
+            </div>
+          </div>
+        </div>
 
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>問題</th>
-            <th>解答</th>
-          </tr>
-
-          <% @book.questions.each do |question| %>
+        <table class="table">
+          <tbody>
             <tr>
-              <td><%= question.content %></td>
-              <td><%= question.correct_answer %></td>
-              <td>
-                <%= link_to "編集", edit_question_path(question), class: "btn btn-xs btn-warning" %>
-                <%= link_to "削除", question, method: :delete,
-                                             data: { confirm: "本当に削除しますか？" },
-                                             class: "btn btn-xs btn-danger"%>
-              </td>
+              <th>問題</th>
+              <th>解答</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <% @book.questions.each do |question| %>
+              <tr>
+                <td><%= question.content %></td>
+                <td><%= question.correct_answer %></td>
+                <td>
+                  <%= link_to "編集", edit_question_path(question), class: "btn btn-xs btn-warning" %>
+                  <%= link_to "削除", question, method: :delete,
+                                               data: { confirm: "本当に削除しますか？" },
+                                               class: "btn btn-xs btn-danger"%>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>
