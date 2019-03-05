@@ -1,0 +1,25 @@
+<div id="form_container">
+  <div class="container container-small">
+    <div class="panel panel-default">
+      <div class= "panel-heading">
+        <div class="row">
+          <div class="col-sm-6">
+            <span><strong>問題を作成</strong></span>
+          </div>
+
+          <div class="col-sm-6 text-right">
+            <%= link_to "戻る", @question.book %>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-8 col-sm-offset-2">
+            <%= render "form" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

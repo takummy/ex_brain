@@ -1,25 +1,62 @@
 <div class="container container-small">
-  <div class="col-sm-3">
+  <div class="col-sm-2">
     <div class="panel">
       <div class="panel-body">
-        <div class="text-center">
-          <% if @book.image.url %>
-            <%= image_tag @book.image.url(:thumb),  class: "book_img" %>
-          <% else %>
-            <%= image_tag 'default_book_image.png', class: "book_img" %>
-          <% end %>
-
-          <h3>
-            <%= @book.title %>
-          </h3>
-
-          <%= link_to "#{t('buttons.edit')}", edit_book_path(@book), class: "small" %>
-
-          <hr class="info_hr">
-
-          <h4 class="text-left"><%= @book.description %></h4>
+        <div class="row">
+          <%= render 'book_info' %>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="col-sm-10 row" >
+    <div class="panel panel-default">
+      <% if @book.questions.empty? %>
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-6">
+              <span class="heading">まだ問題が作成されていません</span>
+            </div>
+            <div class="col-sm-6 text-right">
+              <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+              <%= link_to "戻る", current_user, class: "btn"%>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-6">
+              問題一覧
+            </div>
+            <div class="col-sm-6 text-right">
+              <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
+              <%= link_to "戻る", current_user, class: "btn"%>
+            </div>
+          </div>
+        </div>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>問題</th>
+              <th>解答</th>
+            </tr>
+            <% @book.questions.each do |question| %>
+              <tr>
+                <td><%= question.content %></td>
+                <td><%= question.correct_answer %></td>
+                <td>
+                  <%= link_to "編集", edit_question_path(question), class: "btn btn-xs btn-warning" %>
+                  <%= link_to "削除", question, method: :delete,
+                                               data: { confirm: "本当に削除しますか？" },
+                                               class: "btn btn-xs btn-danger"%>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>
