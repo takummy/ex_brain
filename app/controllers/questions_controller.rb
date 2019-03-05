@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_question, only: %i(edit update)
+  before_action :set_question, only: %i(edit update destroy)
 
   def new
     @book = Book.find(params[:book_id])
@@ -29,6 +29,12 @@ class QuestionsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @question.destroy
+    flash[:info] = "#{@question.book.title}の問題を削除しました"
+    redirect_to @question.book
   end
 
   private
