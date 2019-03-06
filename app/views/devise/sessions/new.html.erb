@@ -1,0 +1,51 @@
+<div id="form_container">
+  <h1 class="text-center"><%= t('user.login') %></h1>
+  <div id="form" class="row">
+    <div class="col-sm-5 col-center">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true,
+                                    autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password,
+                               autocomplete: "current-password", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group text-center">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="form-group row">
+          <%= f.submit "#{t('session.login')}", class: "btn btn-primary col-center" %>
+          <div class="col-sm-5">
+          </div>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
+
+      <div class="text-center row social_buttons">
+        <div class="col-sm-12">
+          <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn_social btn_fb" do %>
+              <i class="fa fa-facebook"></i> <%= t('session.facebook') %>
+          <% end %>
+        </div>
+
+        <div class="col-sm-12">
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn_social btn_google" do %>
+            <i class="fa fa-google-plus"></i> <%= t('session.google') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

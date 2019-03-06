@@ -1,0 +1,69 @@
+<div id="form_container">
+  <h1 class="text-center"><%= t('registration.signup') %></h1>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-group">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group">
+          <%= f.label :icon %>
+          <%= f.file_field :icon %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true,
+                                  autocomplete: "name", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true,
+                                    autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password,
+                               autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation,
+                               autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div id="user_create_button" class="form-group row">
+          <%= f.submit "#{t('buttons.submit')}", class: "btn btn-primary col-sm-2 col-sm-offset-5" %>
+          <div class="col-sm-offset-5">
+          </div>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= render "devise/shared/links" %>
+      </div>
+
+      <div class="text-center row social_buttons">
+        <div class="col-sm-12">
+          <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn_social btn_fb" do %>
+              <i class="fa fa-facebook"></i> <%= t('registration.facebook') %>
+          <% end %>
+        </div>
+
+        <div class="col-sm-12">
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn_social btn_google" do %>
+            <i class="fa fa-google-plus"></i> <%= t('registration.google') %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-offset-3">
+    </div>
+  </div>
+</div>

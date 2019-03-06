@@ -1,0 +1,64 @@
+<div id="form_container">
+  <h1 class="text-center"><%= t('user.edit') %></h1>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-group">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group">
+          <%= f.label :icon %>
+          <%= f.file_field :icon %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name,
+                            autofocus: true,
+                            autocomplete: "name", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email,
+                               autofocus: true,
+                               autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %> <small>(<%= t('user.new_password') %>)</small><br />
+          <%= f.password_field :password,
+                                autocomplete: "new-password", class: "form-control" %>
+          <% if @minimum_password_length %>
+            <em>＊<%= @minimum_password_length %> <%= t('user.password_limit') %></em>
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation,
+                               autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :current_password %> <small>(<%= t('user.current_password') %>)</small>
+          <%= f.password_field :current_password,
+                               autocomplete: "current-password", class: "form-control" %>
+        </div>
+        <div id="user_update_button">
+          <%= f.submit "#{t('buttons.update')}", class: 'btn btn-success form-control' %>
+        </div>
+      <% end %>
+      <div id="back_button" class="form-group">
+        <%= link_to "#{t('buttons.back')}", :back, class: "btn btn-default form-control"  %>
+      </div>
+      <br>
+      <br>
+      <br>
+      <%= button_to "#{t('user.cancel_account')}", registration_path(resource_name),
+                                                   data: { confirm: "Are you sure?" },
+                                                   method: :delete, id: "cancel_button",
+                                                   class: "btn btn-danger form-control" %>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

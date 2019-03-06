@@ -1,0 +1,35 @@
+ja:
+  buttons:
+    submit: "登録"
+    edit: "編集"
+    update: "更新"
+    delete: "削除"
+    back: "戻る"
+  registration:
+    signup: "新規登録"
+    facebook: "Facebookアカウントで新規登録"
+    google: "Googleアカウントで新規登録"
+  session:
+    login: "ログイン"
+    logout: "ログアウト"
+    facebook: "Facebookアカウントでログイン"
+    google: "Googleアカウントでログイン"
+  user:
+    mypage: "マイページ"
+    login: "ログイン"
+    edit: "ユーザー情報を編集する"
+    new_password: "パスワードを変更する場合のみ入力"
+    current_password: "変更するには現在のパスワードを入力してください"
+    password_limit: "文字以上"
+    cancel_account: "アカウントを削除する"
+  book:
+    new: "本を登録する"
+    edit: "本を編集する"
+    add: "本を追加する"
+    added: "本を追加しました"
+    edited: "書籍を編集しました"
+    index: "書籍一覧"
+    deleted: "を削除しました"
+  question:
+    start: "スタート"
+    index: "問題一覧"
