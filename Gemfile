@@ -10,7 +10,7 @@ gem 'puma', '~> 3.11'
 
 #画像アップロード
 gem 'carrierwave'
-gem 'fog'
+# gem 'fog'
 gem 'mini_magick'
 
 #環境変数
