@@ -11,6 +11,7 @@ body {
   .container {
     width: 100%;
     min-height: 100%;
+    margin-top: 100px;
     position: relative;
   }
 }
@@ -22,6 +23,7 @@ body {
 // Flash Message, Error Message
 .alert {
   text-align: center;
+  margin-top: 60px;
 
   h2, li {
     text-align: left;
@@ -50,7 +52,6 @@ body {
 
 // Header
 header {
-  background-color: #06abf994;
   text-decoration: none;
 
   a {
@@ -58,28 +59,35 @@ header {
      font-weight: bold;
   }
 
-  .navbar {
-    margin-bottom: 0px;
-  }
-
   .navbar-brand {
     font-size: 30px;
-    padding-left: 45px;
-  }
-
-  .nav-item {
-    a {
-      text-decoration: none;
-    }
   }
 
   .navbar-right {
     margin-right: 50px;
   }
 
-  .container {
+  .container-fluid {
+    height: 60px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .fixed-top {
+    background: #c0e8ff;
+    height:　50px;
+    line-height: 50px;
+  }
+
+  ul {
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    display: inline-block;
   }
 }
 
