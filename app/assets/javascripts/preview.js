@@ -11,7 +11,7 @@ $( document ).on('turbolinks:load', function() {
   }
 
   $("#post_img").change(function(){
-    $('#book_img_prev').removeClass('hidden');
+    $('#book_img_prev').removeClass('d-none');
     $('.present_book_img').remove();
     readURL(this);
   });

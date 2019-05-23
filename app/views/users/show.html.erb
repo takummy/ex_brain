@@ -1,45 +1,50 @@
 <div class="container container-small">
-  <div class="col-sm-2">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="row">
-          <%= render 'user_info' %>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="container">
+        <div class="card text-center">
+          <div class="card-body">
+              <%= render 'user_info' %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-10 row" >
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= t('book.index') %>
-      </div>
-
-      <div id="user_books" class="panel-body col-center row">
-        <% @books.each do |book| %>
-          <div id="book_box" class="col-sm-3 row">
-            <div id="box_inner" class="text-center col-center row">
+    <div class="col-sm-9">
+      <div class="card">
+        <div class="card-header text-center">
+          <strong><%= t('book.index') %></strong>
+        </div>
+        <div class="card">
+          <% @books.each do |book| %>
+            <div class="card text-center">
+              <div class="card-img-top">
                 <%= link_to book_path(book) do %>
-                  <%= image_tag book.image.url(:thumb),  class: "book_img col-center" %>
+                  <%= image_tag book.image.url(:thumb), class: "book_img" %>
                 <% end %>
-                <div id="my_page_book_title" class="col-center">
+              </div>
+
+              <div class="card-body">
+                <div id="my_page_book_title">
                   <%= book.title %>
                 </div>
 
-                <hr id="book_info_hr" class="col-center">
+                <hr id="book_info_hr">
 
-                <div id="my_page_book_description" class="col-center">
+                <div id="my_page_book_description">
                   <%= book.description %>
                 </div>
-                <div id="start_button" class="col-center">
-                  <%= link_to "#{t('question.start')}", "#", class: "btn-xs btn-success" %>
+                <div id="start_button">
+                  <%= link_to "#{t('question.start')}", "#", class: "btn btn-info rounded-pill" %>
                 </div>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-      <div id="book_pagination">
-        <%= paginate @books %>
+          <% end %>
+        </div>
+
+        <div id="book_pagination">
+          <%= paginate @books %>
+        </div>
       </div>
     </div>
   </div>
