@@ -158,6 +158,10 @@ textarea#book_description {
 }
 
 // Book/Show
+#book_discription {
+  white-space: pre-wrap;
+}
+
 hr.info_hr {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -261,7 +265,7 @@ hr.info_hr {
   min-height: 40px;
   max-height: 40px;
   line-height: 15px;
-  white-space:normal;
+  white-space: pre-wrap;
   overflow-y: auto;
   font-size: 12px;
   word-wrap: break-word;
