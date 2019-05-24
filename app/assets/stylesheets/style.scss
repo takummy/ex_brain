@@ -22,6 +22,7 @@ body {
 // Flash Message, Error Message
 .alert {
   text-align: center;
+  margin-top: 60px;
 
   h2, li {
     text-align: left;
@@ -50,7 +51,6 @@ body {
 
 // Header
 header {
-  background-color: #06abf994;
   text-decoration: none;
 
   a {
@@ -58,28 +58,35 @@ header {
      font-weight: bold;
   }
 
-  .navbar {
-    margin-bottom: 0px;
-  }
-
   .navbar-brand {
     font-size: 30px;
-    padding-left: 45px;
-  }
-
-  .nav-item {
-    a {
-      text-decoration: none;
-    }
   }
 
   .navbar-right {
     margin-right: 50px;
   }
 
-  .container {
+  .container-fluid {
+    height: 60px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .fixed-top {
+    background: #c0e8ff;
+    height:　50px;
+    line-height: 50px;
+  }
+
+  ul {
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    display: inline-block;
   }
 }
 
@@ -99,18 +106,13 @@ footer {
   }
 }
 
-// Home
-.info {
-  h1 {
-    text-align: center;
-  }
-
-  p {
-    padding: 0 100px 100px 100px;
+// Forms
+#login_form {
+  .container {
+    width: 30%;
   }
 }
 
-// Forms
 #form_container {
   width: 850px;
   margin: 0 auto;
@@ -129,7 +131,7 @@ footer {
 
 // Book Image
 .book_img, .user_img {
-  width: 143px;
+  width: 150px;
   height: 200px;
 }
 
@@ -144,7 +146,7 @@ textarea#book_description {
 }
 
 #book_buttons {
-  margin-top: 45px;
+  margin-top: 5px;
 
   .btn {
     width: 55px;
@@ -152,7 +154,7 @@ textarea#book_description {
 }
 
 .container-small {
-  margin-top: 60px;
+  margin-top: 92px;
 }
 
 // Book/Show
@@ -171,7 +173,7 @@ hr.info_hr {
 }
 
 .btn_social {
-  width: 100%;
+  width: 60%;
   color: white;
 }
 
@@ -218,10 +220,6 @@ hr.info_hr {
   margin-bottom: 8px;
 }
 
-#user_books {
-  padding: 15 60px;
-}
-
 #book_pagination {
   padding-left: 10px;
 }
@@ -251,7 +249,7 @@ hr.info_hr {
 }
 
 #book_info_hr {
-  width: 149px;
+  width: 430px;
   margin-top: 0;
   margin-bottom: 5px;
   padding: 0;

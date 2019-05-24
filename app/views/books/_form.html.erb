@@ -1,49 +1,49 @@
 <%= form_with(model: @book, local: true) do |f| %>
-
-<%= render 'shared/error_messages', object: f.object %>
-  <div class="form-group row">
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-group">
     <div>
       <%= f.label :image %>
     </div>
 
-    <div class="col-sm-8">
-      <img id="book_img_prev" src="#" class='hidden' />
+    <div>
+      <img id="book_img_prev" src="#" class='d-none' />
 
       <% if @book.image.present? %>
         <%= image_tag @book.image.url(:thumb), class: "present_book_img book_img" %>
       <% else %>
         <%= image_tag "default_book_image.png", class: "present_book_img book_img" %>
       <% end %>
-
-      <%= f.file_field :image, id: "post_img" %>
+      <div>
+        <%= f.file_field :image, id: "post_img" %>
+      </div>
     </div>
   </div>
 
-  <div class="form-group row">
+  <div class="form-group">
     <div>
       <%= f.label :title %>
     </div>
 
-    <div class="col-sm-4">
+    <div>
       <%= f.text_field :title, class:'form-control' %>
     </div>
   </div>
 
-  <div class="form-group row">
+  <div class="form-group">
     <div>
       <%= f.label :description %>
     </div>
 
-    <div class="col-sm-6">
+    <div>
       <%= f.text_area :description, class:'form-control'%>
     </div>
 
-    <div id="book_buttons" class="col-sm-2 row">
-      <%= f.submit "#{t('buttons.submit')}", class: 'btn btn-success col-sm-6'%>
+    <div id="book_buttons">
+      <%= f.submit "#{t('buttons.submit')}", class: 'btn btn-success rounded-pill'%>
       <% if action_name == 'edit' %>
         <%= link_to "#{t('buttons.delete')}", book_path(f.object.id), method: :delete,
                                             data: { confirm: "本当に#{f.object.title}を削除しますか？" },
-                                            class: "btn btn-danger col-sm-5 col-sm-offset-1" %>
+                                            class: "btn btn-danger rounded-pill" %>
       <% end %>
     </div>
   </div>
