@@ -15,9 +15,9 @@ body {
   }
 }
 
-.panel {
-  border: 1px solid #d2cdcd;
-}
+// .panel {
+//   border: 1px solid #d2cdcd;
+// }
 
 // Flash Message, Error Message
 .alert {
@@ -224,23 +224,29 @@ hr.info_hr {
   margin-bottom: 8px;
 }
 
-#book_pagination {
-  padding-left: 10px;
+#card_container {
+  margin-bottom: 30px;
 }
 
-#book_box {
-  margin-bottom: 15px;
-  padding: 0 40px;
-}
-
-#box_inner {
-  background-color: #5cc2f326;
-  border-radius: 10px;
-
-  .book_img {
-    padding-top: 10px;
+#cards {
+  .card-img-top {
+    margin-top: 20px;
   }
 }
+
+// #book_box {
+//   margin-bottom: 15px;
+//   padding: 0 40px;
+// }
+
+// #box_inner {
+//   background-color: #5cc2f326;
+//   border-radius: 10px;
+
+//   .book_img {
+//     padding-top: 10px;
+//   }
+// }
 
 #my_page_book_title {
   font-weight: bold;
@@ -265,7 +271,7 @@ hr.info_hr {
   min-height: 40px;
   max-height: 40px;
   line-height: 15px;
-  white-space: pre-wrap;
+  white-space: pre-line;
   overflow-y: auto;
   font-size: 12px;
   word-wrap: break-word;
