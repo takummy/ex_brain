@@ -15,10 +15,10 @@
         <% if @book.questions.empty? %>
           <div class="card-header">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-5 offset-sm-4">
                 <h3>まだ問題が作成されていません</h3>
               </div>
-              <div class="col-sm-6 text-right">
+              <div class="col-sm-3 text-righ">
                 <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
                 <%= link_to "戻る", current_user, class: "btn"%>
               </div>
@@ -27,21 +27,22 @@
         <% else %>
           <div class="card-header">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-4 offset-sm-5">
                 <h3>問題一覧</h3>
               </div>
-              <div class="col-sm-6 text-right">
+              <div class="col-sm-3 text-right">
                 <%= link_to "問題を追加する", new_book_question_path(@book), class: "btn btn-xs btn-success" %>
                 <%= link_to "戻る", current_user, class: "btn"%>
               </div>
             </div>
           </div>
 
-          <table class="table">
+          <table class="table table-striped text-center">
             <tbody>
               <tr>
                 <th>問題</th>
                 <th>解答</th>
+                <th></th>
               </tr>
               <% @book.questions.each do |question| %>
                 <tr>
