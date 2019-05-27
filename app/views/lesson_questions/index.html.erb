@@ -1,0 +1,32 @@
+<div class="container container-small">
+  <div class="card text-center">
+    <div class="card-header">
+      <h2>結果: <%= @result %> / <%= @lesson.questions.count %></h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th>問題</th>
+          <th>あなたの回答</th>
+          <th>正解</th>
+          <th></th>
+        </tr>
+
+        <% @lesson_questions.each do |lesson_question| %>
+          <tr>
+            <td><%= lesson_question.question.content %></td>
+            <td><%= lesson_question.answer.content %></td>
+            <td><%= lesson_question.question.correct_answer %></td>
+            <td>
+              <% if lesson_question.answer.correct == true %>
+                <i class="fa fa-check"></i>
+              <% else %>
+                <i class="fa fa-times"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -11,13 +11,13 @@
     </div>
 
     <div class="col-sm-9">
-      <div class="card">
+      <div id="card_container" class="card">
         <div class="card-header text-center">
           <strong><%= t('book.index') %></strong>
         </div>
         <div class="card">
           <% @books.each do |book| %>
-            <div class="card text-center">
+            <div id="cards" class="card text-center">
               <div class="card-img-top">
                 <%= link_to book_path(book) do %>
                   <%= image_tag book.image.url(:thumb), class: "book_img" %>
@@ -34,17 +34,20 @@
                 <div id="my_page_book_description">
                   <%= book.description %>
                 </div>
+
                 <div id="start_button">
-                  <%= link_to "#{t('question.start')}", "#", class: "btn btn-info rounded-pill" %>
+                  <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
+                    <%= f.hidden_field :book_id, value: book.id %>
+                    <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
+                  <% end %>
                 </div>
               </div>
             </div>
           <% end %>
         </div>
-
-        <div id="book_pagination">
-          <%= paginate @books %>
-        </div>
+      </div>
+      <div>
+        <%= paginate @books %>
       </div>
     </div>
   </div>
