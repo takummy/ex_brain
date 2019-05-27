@@ -1,0 +1,17 @@
+<div id="login_form">
+  <div class="container container-small">
+    <div class="card text-center">
+      <div class="card-header">
+        <h1><%= @question.content %></h1>
+      </div>
+      <ul class="list-group list-group-flush">
+        <% @choices.each do |answer| %>
+          <li class="list-group-item btn btn-default">
+            <%= button_to answer.content, lesson_lesson_questions_path,
+                                          params: { answer_id: answer.id, question_id: @question.id } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

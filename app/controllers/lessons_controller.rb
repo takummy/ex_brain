@@ -5,8 +5,7 @@ class LessonsController < ApplicationController
     @lesson = current_user.lessons.build(lesson_params)
     if @lesson.save
       flash[:success] = "問題を開始します"
-      redirect_to root_path
-      # new_lesson_lesson_question_path(@lesson)
+      redirect_to new_lesson_lesson_question_path(@lesson)
     else
       root_path
     end
