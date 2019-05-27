@@ -34,8 +34,12 @@
                 <div id="my_page_book_description">
                   <%= book.description %>
                 </div>
+
                 <div id="start_button">
-                  <%= link_to "#{t('question.start')}", "#", class: "btn btn-info rounded-pill" %>
+                  <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
+                    <%= f.hidden_field :book_id, value: book.id %>
+                    <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
+                  <% end %>
                 </div>
               </div>
             </div>
