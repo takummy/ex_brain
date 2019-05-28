@@ -24,7 +24,8 @@
     <% end %>
   </div>
 
-  <div class="text-center form-group">
+  <div class="text-right form-group">
     <%= f.submit class: 'btn btn-success'%>
+    <%= link_to "戻る", @question.book, class: "btn" %>
   </div>
 <% end %>

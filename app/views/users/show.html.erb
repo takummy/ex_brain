@@ -12,8 +12,15 @@
 
     <div class="col-sm-9">
       <div id="card_container" class="card">
-        <div class="card-header text-center">
-          <strong><%= t('book.index') %></strong>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-4 offset-sm-5">
+              <h3><%= t('book.index') %></h3>
+            </div>
+            <div class="col-sm-3 text-right">
+              <%= link_to "本を追加する", new_book_path, class: "btn btn-xs btn-success" %>
+            </div>
+          </div>
         </div>
         <div class="card">
           <% @books.each do |book| %>
