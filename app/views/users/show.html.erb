@@ -43,12 +43,18 @@
                 </div>
 
                 <% if book.questions.exists? %>
-                  <div>
-                    <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
-                      <%= f.hidden_field :book_id, value: book.id %>
-                      <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
-                    <% end %>
-                  </div>
+                  <% if current_user.answered?(book.id) %>
+                    <div>
+                      <%= link_to "復習する", root_path, class: "btn btn-info rounded-pill" %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
+                        <%= f.hidden_field :book_id, value: book.id %>
+                        <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
+                      <% end %>
+                    </div>
+                  <% end %>
                 <% else %>
                   <div>
                     <%= link_to "問題を作成する", new_book_question_path(book),
