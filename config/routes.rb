@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :books, shallow: true do
     resources :questions
   end
-  resources :lessons, only: %i(new create), shallow: true do
+  resources :lessons, only: %i(create destroy), shallow: true do
     resources :lesson_questions
   end
 end

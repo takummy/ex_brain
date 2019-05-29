@@ -27,7 +27,7 @@
             <div id="cards" class="card text-center">
               <div class="card-img-top">
                 <%= link_to book_path(book) do %>
-                  <%= image_tag book.image.url(:thumb), class: "book_img" %>
+                <%= image_tag book.image.url(:thumb), class: "book_img" %>
                 <% end %>
               </div>
 
@@ -45,9 +45,11 @@
                 <% if book.questions.exists? %>
                   <% if answered?(book.id) %>
                     <div>
-                      <%= link_to "前回の結果", lesson_lesson_questions_path(last_lesson(book.id)),
+                      <%= link_to "前回の成績", lesson_lesson_questions_path(last_lesson(book.id)),
                                               class: "btn btn-success rounded-pill" %>
-                      <%= link_to "復習する", root_path, class: "btn btn-info rounded-pill" %>
+                      <%= link_to "前回の成績を削除", lesson_path(last_lesson(book.id)),
+                                             method: :delete,
+                                             class: "btn btn-danger rounded-pill" %>
                     </div>
                   <% else %>
                     <div>

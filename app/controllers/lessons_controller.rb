@@ -11,6 +11,14 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    lesson = Lesson.find(params[:id])
+    if lesson.destroy
+      flash[:info] = "前回の成績を削除しました"
+      redirect_to current_user
+    end
+  end
+
   private
   def lesson_params
     params.require(:lesson).permit(:book_id)
