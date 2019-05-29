@@ -43,7 +43,7 @@
                 </div>
 
                 <% if book.questions.exists? %>
-                  <% if current_user.answered?(book.id) %>
+                  <% if answered?(book.id) %>
                     <div>
                       <%= link_to "復習する", root_path, class: "btn btn-info rounded-pill" %>
                     </div>

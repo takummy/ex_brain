@@ -8,8 +8,6 @@ class User < ApplicationRecord
 
   mount_uploader :icon, IconUploader
 
-  # scope :answered?, ->(book_id) { lessons.where(book_id: book_id).exists? }
-
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
@@ -24,9 +22,5 @@ class User < ApplicationRecord
     end
 
     user
-  end
-
-  def answered?(book_id)
-    lessons.where(book_id: book_id).exists?
   end
 end
