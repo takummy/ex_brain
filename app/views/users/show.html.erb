@@ -27,7 +27,7 @@
             <div id="cards" class="card text-center">
               <div class="card-img-top">
                 <%= link_to book_path(book) do %>
-                  <%= image_tag book.image.url(:thumb), class: "book_img" %>
+                <%= image_tag book.image.url(:thumb), class: "book_img" %>
                 <% end %>
               </div>
 
@@ -42,12 +42,29 @@
                   <%= book.description %>
                 </div>
 
-                <div id="start_button">
-                  <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
-                    <%= f.hidden_field :book_id, value: book.id %>
-                    <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
+                <% if book.questions.exists? %>
+                  <% if answered?(book.id) %>
+                    <div>
+                      <%= link_to "前回の成績", lesson_lesson_questions_path(last_lesson(book.id)),
+                                              class: "btn btn-success rounded-pill" %>
+                      <%= link_to "前回の成績を削除", lesson_path(last_lesson(book.id)),
+                                             method: :delete,
+                                             class: "btn btn-danger rounded-pill" %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <%= form_with(model: @lesson, url: lessons_path, local: true) do |f| %>
+                        <%= f.hidden_field :book_id, value: book.id %>
+                        <%= f.submit "#{t('question.start')}", class: "btn btn-info rounded-pill" %>
+                      <% end %>
+                    </div>
                   <% end %>
-                </div>
+                <% else %>
+                  <div>
+                    <%= link_to "問題を作成する", new_book_question_path(book),
+                                               class: "btn btn-warning rounded-pill" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           <% end %>

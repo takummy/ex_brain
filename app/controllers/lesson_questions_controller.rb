@@ -17,7 +17,7 @@ class LessonQuestionsController < ApplicationController
     answered_questions = lesson.questions
 
     if lesson_question.save
-      flash[:success] = "回答を保存しました"
+      flash[:success] = "解答を保存しました"
       next_question = questions - answered_questions
 
       if next_question.any?
