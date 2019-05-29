@@ -45,6 +45,8 @@
                 <% if book.questions.exists? %>
                   <% if answered?(book.id) %>
                     <div>
+                      <%= link_to "前回の結果", lesson_lesson_questions_path(last_lesson(book.id)),
+                                              class: "btn btn-success rounded-pill" %>
                       <%= link_to "復習する", root_path, class: "btn btn-info rounded-pill" %>
                     </div>
                   <% else %>
