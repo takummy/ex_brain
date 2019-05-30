@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: %i(show edit update destroy)
+  before_action :require_correct_owner, only: %i(show edit update destroy)
 
   def new
     @book = Book.new
@@ -43,5 +44,13 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :description, :image)
+  end
+
+  def require_correct_owner
+    book = Book.find(params[:id])
+    unless current_user.id == book.user_id
+      flash[:danger] = "アクセスできません"
+      redirect_to root_path
+    end
   end
 end
