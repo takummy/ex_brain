@@ -49,6 +49,7 @@
                                               class: "btn btn-success rounded-pill" %>
                       <%= link_to "前回の成績を削除", lesson_path(last_lesson(book.id)),
                                              method: :delete,
+                                             data: { confirm: "本当に前回の結果を削除しますか？" },
                                              class: "btn btn-danger rounded-pill" %>
                     </div>
                   <% else %>
