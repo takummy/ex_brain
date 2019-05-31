@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    description { "MyString" }
-    image { "MyString" }
+    title { "パピーポッティー" }
+    description { "魔法学校的なサムシング" }
   end
 end
