@@ -33,8 +33,9 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    flash[:info] = "#{@question.book.title}の問題を削除しました"
-    redirect_to @question.book
+    head :no_content
+    # flash[:info] = "#{@question.book.title}の問題を削除しました"
+    # redirect_to @question.book
   end
 
   private

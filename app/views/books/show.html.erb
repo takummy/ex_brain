@@ -51,8 +51,9 @@
                   <td>
                     <%= link_to "編集", edit_question_path(question), class: "btn btn-xs btn-warning" %>
                     <%= link_to "削除", question, method: :delete,
+                                                 remote: true,
                                                  data: { confirm: "本当に削除しますか？" },
-                                                 class: "btn btn-xs btn-danger"%>
+                                                 class: "btn btn-xs btn-danger delete"%>
                   </td>
                 </tr>
               <% end %>
