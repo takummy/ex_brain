@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :rememberable, :validatable, :omniauthable,
          omniauth_providers: %i(facebook twitter google_oauth2)
 
+  validates :name, presence: true, length:{ maximum: 30}
+
   mount_uploader :icon, IconUploader
 
   def self.find_for_oauth(auth)
