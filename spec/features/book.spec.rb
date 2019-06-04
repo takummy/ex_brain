@@ -5,9 +5,9 @@ RSpec.feature "書籍機能", type: :feature do
   background do
     book = FactoryBot.create(:book, user_id: user.id)
     FactoryBot.create(
-      :book, 
+      :book,
       title: "GOT",
-      description: "七王国のやつ", 
+      description: "七王国のやつ",
       user_id: user.id
     )
 
@@ -42,9 +42,9 @@ RSpec.feature "書籍機能", type: :feature do
 
   scenario "書籍編集のテスト" do
     book = FactoryBot.create(:book, user_id: user.id)
-    visit edit_book_path(book.id) 
+    visit edit_book_path(book.id)
     click_on "登録"
-    
+
     expect(page).to have_content "パピーポッティー"
     expect(page).to have_content "まだ問題が作成されていません"
   end

@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "ユーザー機能", type: :feature do
-  let(:now) { Date.current }
   background do
-    FactoryBot.create(:user, id: 12)
+    FactoryBot.create(:user, id: 1)
     FactoryBot.create(
-      :user, id: 13, 
-      name: "Owen", 
-      email: "owen@email.com", 
+      :user, id: 2,
+      name: "Owen",
+      email: "owen@email.com",
       password: "password"
     )
   end
@@ -67,12 +66,12 @@ RSpec.feature "ユーザー機能", type: :feature do
     end
 
     scenario "自分以外のマイページへ飛べないテスト" do
-      visit user_path(13)
+      visit user_path(2)
       expect(page).to have_content "権限がありません"
     end
 
     scenario "アカウント削除テスト" do
-      visit edit_user_registration_path(13)
+      visit edit_user_registration_path(2)
       click_on "アカウントを削除する"
       expect(page).to have_content "アカウントを削除しました。またのご利用をお待ちしております。"
     end
