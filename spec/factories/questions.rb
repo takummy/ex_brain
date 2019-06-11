@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :question do
-    book { nil }
-    content { "MyString" }
+    content { "どんな話？" }
   end
 end
