@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
+  before_action :require_correct_owner, only: :show
 
   def create
     @lesson = current_user.lessons.build(lesson_params)
@@ -22,5 +23,13 @@ class LessonsController < ApplicationController
   private
   def lesson_params
     params.require(:lesson).permit(:book_id)
+  end
+
+  def require_correct_owner
+    lesson = Lesson.find(params[:id])
+    unless current_user.id == lesson.user_id
+      flash[:danger] = "アクセスできません"
+      redirect_to root_path
+    end
   end
 end
