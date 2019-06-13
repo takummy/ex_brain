@@ -8,16 +8,12 @@ body {
   height: 100%;
   background-color: #e9ebee36;
 
-  .container {
+  .container-all {
     width: 100%;
     min-height: 100%;
-    position: relative;
+    margin-top: 92px;
   }
 }
-
-// .panel {
-//   border: 1px solid #d2cdcd;
-// }
 
 // Flash Message, Error Message
 .alert {
@@ -151,10 +147,6 @@ textarea#book_description {
   .btn {
     width: 55px;
   }
-}
-
-.container-small {
-  margin-top: 92px;
 }
 
 // Book/Show
