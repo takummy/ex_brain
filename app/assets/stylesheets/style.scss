@@ -102,6 +102,39 @@ footer {
   }
 }
 
+//Home
+.home_info {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .lead {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .btn_container {
+    margin: 0 auto;
+    width: 410px;
+    padding: 60px;
+
+    .btn {
+      color: white;
+      display: inline-block;
+      background-color: #4383e4;
+      padding: 14px 20px;
+      font-size: 15px;
+      margin: 5px;
+    }
+  }
+}
+
+.card-text {
+  font-size: 15px;
+}
+
 // Forms
 #login_form {
   .container {
