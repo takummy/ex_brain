@@ -1,10 +1,46 @@
-<div class="container-small">
+<div id="home_container" class="container">
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div class="info">
-        <h1 class="display-4">Home</h1>
-        <p class="lead">読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです読書管理アプリです</p>
-      </div>
+    <div class="home_info">
+      <h1 class="display-4">Welcome to ExBrain!</h1>
+      <p class="lead">
+        ExBrainは、読み終わった本の内容を問題形式で復習することができます。</br>
+        ちょっとした知識のインプットを効率的に行う手助けをします。
+      </p>
+
+      <% unless user_signed_in? %>
+        <div class="btn_container">
+          <%= link_to "新規登録", "#", class: "btn" %>
+          <%= link_to "ログイン", "#", class: "btn" %>
+          <p>or</p>
+          <%= link_to " Googleアカウントでログイン", "#", class: "fa fa-google-plus btn" %>
+          <%= link_to " Facebookアカウントでログイン", "#", class: "fa fa-facebook btn" %>
+        </div>
+      <% end %>
     </div>
   </div>
+  <% if user_signed_in? %>
+    <div class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">①まずは本を登録しましょう。</h1>
+          <p class="card-text">カバー写真、タイトル、概要を登録できます。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">②本の内容についての問題を作成しましょう。</h1>
+          <p class="card-text">自由に問題を設定できます。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">問題を解いて、知識を定着させましょう。</h1>
+          <p class="card-text">
+            解答結果ページで、成績を確認できます。</br>
+            また、前回の結果を削除して何度でも挑戦できます。
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
