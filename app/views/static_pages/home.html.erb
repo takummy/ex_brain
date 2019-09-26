@@ -9,11 +9,15 @@
 
       <% unless user_signed_in? %>
         <div class="btn_container">
-          <%= link_to "新規登録", "#", class: "btn" %>
-          <%= link_to "ログイン", "#", class: "btn" %>
+          <%= link_to "#{t('registration.signup')}", new_user_registration_path, class: "btn" %>
+          <%= link_to "#{t('session.login')}", user_session_path, class: "btn" %>
           <p>or</p>
-          <%= link_to " Googleアカウントでログイン", "#", class: "fa fa-google-plus btn" %>
-          <%= link_to " Facebookアカウントでログイン", "#", class: "fa fa-facebook btn" %>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn" do %>
+            <i class="fa fa-google-plus"></i> <%= t('session.google') %>
+          <% end %>
+          <%= link_to user_facebook_omniauth_authorize_path, class: "btn" do %>
+            <i class="fa fa-facebook"></i> <%= t('session.facebook') %>
+          <% end %>
         </div>
       <% end %>
     </div>
