@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require jquery/dist/jquery.js
 //= require_tree .
+
+$(function(){
+  setTimeout("$('#time-limit').fadeOut('slow')", 1200)
+})

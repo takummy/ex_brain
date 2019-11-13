@@ -14,7 +14,6 @@ class LessonQuestionsController < ApplicationController
                                                     answer_id: params[:answer_id])
 
     if lesson_question.save
-      flash[:success] = "解答を保存しました"
       next_or_result(lesson)
     end
   end
@@ -41,10 +40,9 @@ class LessonQuestionsController < ApplicationController
         @question = (book.questions - lesson.questions).first
         @choices = @question.answers
         format.js { render :create }
-        # redirect_to new_lesson_lesson_question_path(lesson)
       else
-        format.html { redirect_to lesson_lesson_questions_path }
-        # redirect_to lesson_lesson_questions_path
+        format.html { redirect_to lesson_lesson_questions_path(lesson),
+                      notice: "解答を保存しました。" }
       end
     end
   end
