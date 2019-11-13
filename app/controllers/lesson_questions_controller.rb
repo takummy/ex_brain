@@ -35,10 +35,17 @@ class LessonQuestionsController < ApplicationController
   end
 
   def next_or_result(lesson)
-    if has_next_question?(lesson)
-      redirect_to new_lesson_lesson_question_path(lesson)
-    else
-      redirect_to lesson_lesson_questions_path
+    respond_to do |format|
+      if has_next_question?(lesson)
+        book = lesson.book
+        @question = (book.questions - lesson.questions).first
+        @choices = @question.answers
+        format.js { render :create }
+        # redirect_to new_lesson_lesson_question_path(lesson)
+      else
+        format.html { redirect_to lesson_lesson_questions_path }
+        # redirect_to lesson_lesson_questions_path
+      end
     end
   end
 end

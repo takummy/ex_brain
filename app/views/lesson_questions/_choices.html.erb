@@ -1,0 +1,12 @@
+<div class="card-header">
+  <h1><%= @question.content %></h1>
+</div>
+<ul class="list-group list-group-flush">
+  <% choices.each do |answer| %>
+    <li class="list-group-item btn btn-default">
+      <%= button_to answer.content, lesson_lesson_questions_path,
+                                    remote: true,
+                                    params: { answer_id: answer.id, question_id: question.id } %>
+    </li>
+  <% end %>
+</ul>
