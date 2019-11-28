@@ -21,7 +21,7 @@ DIVE INTO CODEの卒業課題です。
 ## 機能一覧
 
 1.ログイン
- - [x] SNSログイン機能(ominiauth使用)(TwitterはAPI申請が通り次第実装)
+ - [x] SNSログイン機能(ominiauth使用)
  - [x] ログインによる機能制限(devise使用)
 
 2.画像
